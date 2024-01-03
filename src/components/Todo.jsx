@@ -3,21 +3,54 @@ import React, { useState } from "react";
 const Todo = () => {
   const [data, setData] = useState("");
   const [item, setItem] = useState([]);
+  const [toogleSubmit, setToogleSubmit] = useState(true);
+  const [ediistItem, setEdiistItem] = useState(null);
 
   const addItem = () => {
-    if (!data) return;
+    if (!data) {
+      return;
+    } else if (data && !toogleSubmit) {
+      console.log(toogleSubmit);
+      setItem(
+        item.map((ele) => {
+          if (ele.id === ediistItem) {
+            return { ...ele, name: data };
+          }
+          return ele;
+        }),
+      );
 
-    setItem((newData) => [...newData, data]);
-    setData("");
+      setData("");
+      setToogleSubmit(true);
+    } else {
+      const allInputData = { id: Math.random().toString(), name: data };
+      setItem((newData) => [...newData, allInputData]);
+      setData("");
+      setToogleSubmit(true);
+    }
   };
 
   const deleteItem = (i) => {
-    const newItem = item.filter((ele, index) => {
-      return i !== index;
+    const newItem = item.filter((dltItem) => {
+      return i !== dltItem.id;
     });
 
     setItem(newItem);
   };
+
+  const editItem = (id) => {
+    let newEditItem = item.find((ele) => {
+      return ele.id === id;
+    });
+
+    setData((item) => newEditItem.name);
+    setToogleSubmit(false);
+
+    setEdiistItem(id);
+    // console.log(ediistItem);
+  };
+
+  let addBtn = "+ Add Item";
 
   return (
     <div className="mx-auto mt-12 flex w-11/12 flex-col items-center justify-center bg-indigo-400 py-8">
@@ -36,27 +69,36 @@ const Todo = () => {
           className="p-2 outline-none"
         />
         <button
-          className="mx-4 border-2 border-black bg-cyan-500 px-2"
+          className="mx-4 rounded-xl border-2 border-black bg-cyan-500 px-2"
           onClick={addItem}
         >
-          + Add Item
+          {toogleSubmit ? addBtn : "Edit Item"}
         </button>
       </form>
 
       <ul className="my-2">
-        {item.map((itemData, index) => {
+        {item.map((itemData) => {
           return (
             <>
               <div className="relative flex items-center justify-between border border-white bg-teal-900 px-[155px]">
                 <li
-                  key={index}
+                  key={itemData.id}
                   className="  relative left-[-129px] place-items-start bg-teal-900 py-4 text-white"
                 >
-                  {itemData}
+                  {itemData.name}
                 </li>
+
                 <button
-                  className="absolute right-0 mx-4 border-2 border-black bg-cyan-500 px-4 "
-                  onClick={() => deleteItem(index)}
+                  className="absolute right-[85px] mx-4 rounded-xl border-2 border-black bg-cyan-500 px-4 
+                "
+                  onClick={() => editItem(itemData.id)}
+                >
+                  Edit
+                </button>
+
+                <button
+                  className="absolute right-0 mx-4 rounded-xl border-2 border-black bg-cyan-500 px-4 "
+                  onClick={() => deleteItem(itemData.id)}
                 >
                   delete
                 </button>

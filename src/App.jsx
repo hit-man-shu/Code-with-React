@@ -1,9 +1,21 @@
 import React from "react";
 import First from "./components/First";
 import Todo from "./components/Todo";
+import MyProp from "./components/MyProp";
 
 const App = () => {
   const userName = "Himanshu";
+
+  const myObj = [
+    {
+      name: "Himanshu",
+      age: [22],
+    },
+    {
+      friendName: "Subham",
+      age: [24],
+    },
+  ];
 
   return (
     <>
@@ -13,6 +25,7 @@ const App = () => {
 
       <First />
       <Todo />
+      {/* <MyProp obj={myObj} /> */}
     </>
   );
 };
