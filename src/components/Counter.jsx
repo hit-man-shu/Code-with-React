@@ -26,7 +26,7 @@ const First = () => {
         </h1>
         <button
           className="mx-4 border-2 border-black bg-cyan-500 p-2"
-          onClick={removeValue}
+          onClick={() => removeValue()}
         >
           Remove Value -
         </button>

@@ -1,21 +1,22 @@
 import React from "react";
-import First from "./components/First";
+import BgChanger from "./components/BgChanger";
+import Counter from "./components/Counter";
 import Todo from "./components/Todo";
-import MyProp from "./components/MyProp";
+// import MyProp from "./components/MyProp";
 
 const App = () => {
   const userName = "Himanshu";
 
-  const myObj = [
-    {
-      name: "Himanshu",
-      age: [22],
-    },
-    {
-      friendName: "Subham",
-      age: [24],
-    },
-  ];
+  // const myObj = [
+  //   {
+  //     name: "Himanshu",
+  //     age: [22],
+  //   },
+  //   {
+  //     friendName: "Subham",
+  //     age: [24],
+  //   },
+  // ];
 
   return (
     <>
@@ -23,9 +24,11 @@ const App = () => {
         Hello World {userName}
       </div>
 
-      <First />
+      <Counter />
       <Todo />
       {/* <MyProp obj={myObj} /> */}
+
+      <BgChanger />
     </>
   );
 };

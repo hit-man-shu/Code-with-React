@@ -10,7 +10,6 @@ const Todo = () => {
     if (!data) {
       return;
     } else if (data && !toogleSubmit) {
-      console.log(toogleSubmit);
       setItem(
         item.map((ele) => {
           if (ele.id === ediistItem) {
@@ -22,6 +21,7 @@ const Todo = () => {
 
       setData("");
       setToogleSubmit(true);
+      setEdiistItem(null);
     } else {
       const allInputData = { id: Math.random().toString(), name: data };
       setItem((newData) => [...newData, allInputData]);
@@ -43,7 +43,7 @@ const Todo = () => {
       return ele.id === id;
     });
 
-    setData((item) => newEditItem.name);
+    setData(newEditItem.name);
     setToogleSubmit(false);
 
     setEdiistItem(id);
