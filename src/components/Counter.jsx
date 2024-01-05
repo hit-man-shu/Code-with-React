@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const First = () => {
+const Counter = () => {
   const [counter, setCounter] = useState(0);
+
+  // useEffect(() => {
+  //   document.title = `Clicked by ${counter} times`;
+  // }, [counter]);
 
   const removeValue = () => {
     if (counter <= 0) {
@@ -21,9 +25,11 @@ const First = () => {
         >
           Add Value +
         </button>
+
         <h1 className="mx-4 border-2 border-black bg-cyan-500 p-4">
           Counter Value: {counter}
         </h1>
+
         <button
           className="mx-4 border-2 border-black bg-cyan-500 p-2"
           onClick={() => removeValue()}
@@ -35,4 +41,4 @@ const First = () => {
   );
 };
 
-export default First;
+export default Counter;

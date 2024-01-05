@@ -8,7 +8,7 @@ const BgChanger = () => {
       className="h-screen w-full duration-200 "
       style={{ backgroundColor: color }}
     >
-      <div className="fixed inset-x-0 bottom-12 flex flex-wrap justify-center px-2">
+      <div className="sticky inset-x-0  flex flex-wrap justify-center px-2 pt-8">
         <div className="flex flex-wrap justify-center gap-3 rounded-xl bg-white px-3 py-2 shadow-lg">
           <button
             className="rounded-full px-4 py-1 text-white shadow-lg outline-none"

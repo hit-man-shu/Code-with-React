@@ -2,6 +2,7 @@ import React from "react";
 import BgChanger from "./components/BgChanger";
 import Counter from "./components/Counter";
 import Todo from "./components/Todo";
+import PasswordGenerator from "./components/PasswordGenerator";
 // import MyProp from "./components/MyProp";
 
 const App = () => {
@@ -29,6 +30,8 @@ const App = () => {
       {/* <MyProp obj={myObj} /> */}
 
       <BgChanger />
+
+      <PasswordGenerator />
     </>
   );
 };
