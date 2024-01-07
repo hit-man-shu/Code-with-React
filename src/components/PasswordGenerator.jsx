@@ -35,7 +35,6 @@ const PasswordGenerator = () => {
 
   //    Ref Hook
   const passwordRefrence = useRef(null);
-
   const copyPasswordToClikboard = () => {
     passwordRefrence.current?.select();
     window.navigator.clipboard.writeText(Password);

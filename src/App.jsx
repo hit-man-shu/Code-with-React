@@ -4,7 +4,6 @@ import Counter from "./components/Counter";
 import Todo from "./components/Todo";
 import PasswordGenerator from "./components/PasswordGenerator";
 import Ref from "./components/Ref";
-import LoginForm from "./components/Form/LoginForm";
 // import MyProp from "./components/MyProp";
 
 const App = () => {
@@ -35,9 +34,7 @@ const App = () => {
 
       {/* <PasswordGenerator /> */}
 
-      {/* <Ref/> */}
-
-      <LoginForm />
+      {/* <Ref /> */}
     </>
   );
 };
