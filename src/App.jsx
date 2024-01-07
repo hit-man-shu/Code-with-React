@@ -4,6 +4,7 @@ import Counter from "./components/Counter";
 import Todo from "./components/Todo";
 import PasswordGenerator from "./components/PasswordGenerator";
 import Ref from "./components/Ref";
+import CurrencyConverter from "./components/CurrencyProject/CurrencyConverter";
 // import MyProp from "./components/MyProp";
 
 const App = () => {
@@ -22,8 +23,8 @@ const App = () => {
 
   return (
     <>
-      <div className="bg-red-500 text-center text-2xl font-bold text-green-400">
-        Hello World {userName}
+      <div className="text-balck-400 bg-slate-500 text-center text-2xl font-bold">
+        {userName}'s Projects
       </div>
 
       {/* <Counter /> */}
@@ -35,6 +36,8 @@ const App = () => {
       {/* <PasswordGenerator /> */}
 
       {/* <Ref /> */}
+
+      <CurrencyConverter />
     </>
   );
 };
