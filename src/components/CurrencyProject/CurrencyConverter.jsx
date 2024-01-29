@@ -6,7 +6,7 @@ const CurrencyConverter = () => {
   const [amount, setAmount] = useState();
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("inr");
-  const [convertedAmount, setConvertedAmount] = useState();
+  const [convertedAmount, setConvertedAmount] = useState(0);
 
   const currencyInfo = useCurrencyInfo(from);
 
@@ -21,7 +21,7 @@ const CurrencyConverter = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setConvertedAmount(amount * Math.floor(currencyInfo[to]));
+    setConvertedAmount(amount * currencyInfo[to]);
   };
 
   return (

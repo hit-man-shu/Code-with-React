@@ -41,9 +41,7 @@ const InputBox = ({
         <select
           className="cursor-pointer rounded-lg bg-gray-100 px-1 py-1 outline-none"
           value={selectCurrency}
-          onChange={(e) =>
-            onCurrencyChange && onCurrencyChange(e.target.value)
-          }
+          onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
           disabled={currencyDisable}
         >
           {currencyOptions.map((currency) => (
